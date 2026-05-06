@@ -9,5 +9,5 @@ class ChatActivity : ReactActivity() {
     override fun getMainComponentName(): String = "ChatScreen"
 
     override fun createReactActivityDelegate(): ReactActivityDelegate =
-        DefaultReactActivityDelegate(this, mainComponentName, fabricEnabled = true)
+        DefaultReactActivityDelegate(this, mainComponentName, fabricEnabled = false)
 }
