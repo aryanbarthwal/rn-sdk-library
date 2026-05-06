@@ -1,7 +1,10 @@
 rootProject.name = "rn-sdk-library"
 
 pluginManagement {
-    includeBuild("CustomReactNativeChatSdk/node_modules/@react-native/gradle-plugin")
+    plugins {
+        id("org.jetbrains.kotlin.multiplatform") version "2.1.10"
+        id("com.android.library") version "8.13.0"
+    }
     repositories {
         google()
         mavenCentral()
@@ -16,10 +19,3 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-
-// Required by the RN Gradle plugin (we intentionally skip autolinking native deps)
-val autolinkFile = file("$rootDir/build/generated/autolinking/autolinking.json")
-autolinkFile.parentFile.mkdirs()
-autolinkFile.writeText(
-    """{"packageName":"com.example.rnsdklibrary","dependencies":{}}"""
-)

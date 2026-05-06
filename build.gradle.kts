@@ -3,7 +3,6 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     id("org.jetbrains.kotlin.multiplatform")
     id("com.android.library")
-    id("com.facebook.react")
     id("maven-publish")
 }
 
@@ -26,23 +25,13 @@ kotlin {
         commonMain.dependencies {
         }
         androidMain.dependencies {
-            implementation("com.facebook.react:react-android")
-            implementation("com.facebook.react:hermes-android")
+            val rnVersion = "0.82.1"
+            implementation("com.facebook.react:react-android:$rnVersion")
+            implementation("com.facebook.react:hermes-android:$rnVersion")
         }
         iosMain.dependencies {
         }
     }
-}
-
-react {
-    root = file("CustomReactNativeChatSdk")
-    reactNativeDir = file("CustomReactNativeChatSdk/node_modules/react-native")
-    codegenDir = file("CustomReactNativeChatSdk/node_modules/@react-native/codegen")
-    cliFile = file("CustomReactNativeChatSdk/node_modules/.bin/react-native")
-    entryFile = file("CustomReactNativeChatSdk/index.js")
-    bundleAssetName = "index.android.bundle"
-    debuggableVariants = emptyList()
-    // autolinkLibrariesWithApp() intentionally omitted
 }
 
 android {
@@ -54,6 +43,7 @@ android {
     }
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
+    sourceSets["main"].assets.srcDir("src/androidMain/assets")
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17

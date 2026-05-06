@@ -2,22 +2,23 @@ package com.example.rnsdklibrary
 
 import android.app.Application
 import com.facebook.react.ReactApplication
-import com.facebook.react.ReactHost
-import com.facebook.react.ReactNativeApplicationEntryPoint.loadReactNative
-import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
+import com.facebook.react.ReactNativeHost
+import com.facebook.react.ReactPackage
 import com.facebook.react.shell.MainReactPackage
+import com.facebook.soloader.SoLoader
 
 class ChatSdkApplication : Application(), ReactApplication {
 
-    override val reactHost: ReactHost by lazy {
-        getDefaultReactHost(
-            context = applicationContext,
-            packageList = listOf(MainReactPackage()),
-        )
+    override val reactNativeHost: ReactNativeHost = object : ReactNativeHost(this) {
+        override fun getUseDeveloperSupport(): Boolean = false
+
+        override fun getPackages(): List<ReactPackage> = listOf(MainReactPackage())
+
+        override fun getJSMainModuleName(): String = "index"
     }
 
     override fun onCreate() {
         super.onCreate()
-        loadReactNative(this)
+        SoLoader.init(this, false)
     }
 }
