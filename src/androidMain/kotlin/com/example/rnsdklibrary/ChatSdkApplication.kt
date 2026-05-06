@@ -7,7 +7,7 @@ import com.facebook.react.ReactPackage
 import com.facebook.react.shell.MainReactPackage
 import com.facebook.soloader.SoLoader
 
-class ChatSdkApplication : Application(), ReactApplication {
+open class ChatSdkApplication : Application(), ReactApplication {
 
     override val reactNativeHost: ReactNativeHost = object : ReactNativeHost(this) {
         override fun getUseDeveloperSupport(): Boolean = false
