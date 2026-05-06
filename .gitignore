@@ -10,3 +10,7 @@ local.properties
 .konan/
 
 .DS_Store
+
+CustomReactNativeChatSdk/node_modules/
+CustomReactNativeChatSdk/android/build/
+CustomReactNativeChatSdk/ios/build/

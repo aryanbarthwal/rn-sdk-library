@@ -1,7 +1,7 @@
 rootProject.name = "rn-sdk-library"
 
 pluginManagement {
-    includeBuild("../../CustomReactNativeChatSdk/node_modules/@react-native/gradle-plugin")
+    includeBuild("CustomReactNativeChatSdk/node_modules/@react-native/gradle-plugin")
     repositories {
         google()
         mavenCentral()

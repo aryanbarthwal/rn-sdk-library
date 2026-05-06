@@ -35,11 +35,11 @@ kotlin {
 }
 
 react {
-    root = file("../../CustomReactNativeChatSdk")
-    reactNativeDir = file("../../CustomReactNativeChatSdk/node_modules/react-native")
-    codegenDir = file("../../CustomReactNativeChatSdk/node_modules/@react-native/codegen")
-    cliFile = file("../../CustomReactNativeChatSdk/node_modules/.bin/react-native")
-    entryFile = file("../../CustomReactNativeChatSdk/index.js")
+    root = file("CustomReactNativeChatSdk")
+    reactNativeDir = file("CustomReactNativeChatSdk/node_modules/react-native")
+    codegenDir = file("CustomReactNativeChatSdk/node_modules/@react-native/codegen")
+    cliFile = file("CustomReactNativeChatSdk/node_modules/.bin/react-native")
+    entryFile = file("CustomReactNativeChatSdk/index.js")
     bundleAssetName = "index.android.bundle"
     debuggableVariants = emptyList()
     // autolinkLibrariesWithApp() intentionally omitted
