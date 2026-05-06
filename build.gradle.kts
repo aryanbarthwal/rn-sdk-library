@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.github.aryanbarthwal"
-version = "0.1.0"
+version = "0.1.2"
 
 kotlin {
     androidTarget {
@@ -26,8 +26,8 @@ kotlin {
         }
         androidMain.dependencies {
             val rnVersion = "0.82.1"
-            implementation("com.facebook.react:react-android:$rnVersion")
-            implementation("com.facebook.react:hermes-android:$rnVersion")
+            api("com.facebook.react:react-android:$rnVersion")
+            api("com.facebook.react:hermes-android:$rnVersion")
         }
         iosMain.dependencies {
         }
